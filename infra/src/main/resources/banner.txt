@@ -1,0 +1,10 @@
+${AnsiColor.GREEN}  ____   ${AnsiColor.RED} _       __     __  ${AnsiColor.GREEN}  _____  ${AnsiColor.RED}                    _
+${AnsiColor.GREEN} / __ \  ${AnsiColor.RED}| |      \ \   / /  ${AnsiColor.GREEN} |  __ \ ${AnsiColor.RED}                   | |
+${AnsiColor.GREEN}| |  | | ${AnsiColor.RED}| |       \ \_/ /   ${AnsiColor.GREEN} | |__) |${AnsiColor.RED} _ __    ___     __| |  _   _    ___    ___   _ __
+${AnsiColor.GREEN}| |  | | ${AnsiColor.RED}| |        \   /    ${AnsiColor.GREEN} |  ___/ ${AnsiColor.RED}| '__|  / _ \   / _` | | | | |  / __|  / _ \ | '__|
+${AnsiColor.GREEN}| |__| | ${AnsiColor.RED}| |____     | |     ${AnsiColor.GREEN} | |     ${AnsiColor.RED}| |    | (_) | | (_| | | |_| | | (__  |  __/ | |
+${AnsiColor.GREEN} \____/  ${AnsiColor.RED}|______|    |_|     ${AnsiColor.GREEN} |_|     ${AnsiColor.RED}|_|     \___/   \__,_|  \__,_|  \___|  \___| |_|
+${AnsiColor.GREEN}         ${AnsiColor.RED}                    ${AnsiColor.GREEN}         ${AnsiColor.RED}
+${AnsiColor.GREEN}         ${AnsiColor.RED}                    ${AnsiColor.GREEN}         ${AnsiColor.RED}
+
+${AnsiColor.BLUE}:: OLY Producer using Spring BOOT VERSION: ${AnsiColor.GREEN} ${spring-boot.version} ::

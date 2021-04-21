@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: CDGK-REPO-EVENT-OLY-PRODUCER
+  profiles:
+    active: ${SPRING_PROFILE_ACTIVE:test}
+
+logging:
+  level:
+    ROOT: WARN
+
+service:
+  logs:
+    folder: ./logs
+  job:
+    event-history-producer:
+      delay: 30000
+      chunk-size: 100
+    event-history-cleaner:
+      cron: "0 0 1 * * ?"
+      chunk-size: 100
+      retention-days: 30
+    batch-history-cleaner:
+      cron: "0 0 2 * * ?"
+      chunk-size: 100
+      retention-days: 30
+  params:
+    env: TST
+    source-system: OLY
+    source-database-schema-name: OLYDEV
+    logging-method: flat-console

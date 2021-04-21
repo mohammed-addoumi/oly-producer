@@ -1,0 +1,90 @@
+server:
+  port: 9096
+
+spring:
+  application:
+    name: CDGK-REPO-EVENT-OLY-PRODUCER
+  profiles:
+    active: ${SPRING_PROFILE_ACTIVE:integ}
+
+  batch:
+    initialize-schema: always
+    job:
+      enabled: false
+  datasource:
+    url: jdbc:oracle:thin:@172.23.23.12:1521:OBSHLT
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: DATA_CONS
+    password: C0n$2020
+  data:
+    mongodb:
+      uri: mongodb://172.17.3.101:27017/?readPreference=primary
+      database: eventstore
+
+  flyway:
+    baseline-on-migrate: true
+    check-location: false
+    enabled: false
+    locations: classpath:/db/migration/all,/db/migration/dev,/db/data/dev
+    out-of-order: false
+    validate-on-migrate: false
+
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: none
+        format_sql: true
+        enable_lazy_load_no_trans: true
+    show-sql: false
+
+  kafka:
+    properties:
+      schema.registry.url: http://172.17.3.111:8001
+    producer:
+      bootstrap-servers: 172.17.3.111:9102
+      compression-type: snappy
+      acks: all
+      retries: 5
+      batch-size: 1000000
+      client-id: ${service.params.env}-${service.params.source-system}-producer
+      transaction-id-prefix: ${service.params.env}-${service.params.source-system}-producer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        schema.registry.url: http://172.17.3.111:8001
+
+
+
+logging:
+  config: classpath:log/logback-spring.xml
+  level:
+    ROOT: INFO
+    ma.cdgk: INFO
+    hibernate:
+      SQL: DEBUG
+    org:
+      springframework:
+        aop:
+          interceptor:
+            PerformanceMonitorInterceptor: INFO
+      apache:
+         kafka: TRACE
+    type:
+      descriptor:
+        sql:
+          BasicBinder: TRACE
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+service:
+  logs:
+    folder: ./logs
+  params:
+    env: DEV
+    source-system: OLY
+    source-database-schema-name: OLYDEV
+    logging-method: flat-console

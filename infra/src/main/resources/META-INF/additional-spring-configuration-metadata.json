@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "name": "service.logs.folder",
+      "type": "java.lang.String",
+      "description": "Description for service.logs.folder."
+    },
+    {
+      "name": "service.params.env",
+      "type": "java.lang.String",
+      "description": "Description for service.params.env."
+    },
+    {
+      "name": "service.params.job-Run-Delay",
+      "type": "java.lang.String",
+      "description": "Description for service.params.job-Run-Delay."
+    }
+  ]
+}

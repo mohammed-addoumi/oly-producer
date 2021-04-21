@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: CDGK-REPO-EVENT-OLY-PRODUCER
+  profiles:
+    active: ${SPRING_PROFILE_ACTIVE:dev}

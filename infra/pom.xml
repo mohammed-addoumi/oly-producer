@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>oly-event-producer</artifactId>
+        <groupId>ma.cdgk.event.repo.producers</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>oly-event-producer-infra</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>ma.cdgk.event.repo.producers</groupId>
+            <artifactId>oly-event-producer-domain</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ma.cdgk.event.repo.starter</groupId>
+            <artifactId>event-producer-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>12.2.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
